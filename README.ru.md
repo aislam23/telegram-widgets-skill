@@ -2,6 +2,10 @@
 
 [English](README.md) · **Русский**
 
+Автор: **[Артём Исламов](https://islamov-tema.ru?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill)**, преподаю разработку с 2016 года, 75 000+
+учеников. Научиться делать такие продукты с ИИ-агентами можно на моём
+[курсе по вайбкодингу](https://islamov-tema.ru/courses/vibecoding?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill).
+
 Скилл для ИИ-агентов (Claude Code, приложения Claude, OpenAI Codex и другие), который учит их правильно
 и безопасно делать **виджеты Telegram Bot API 10.4**: интерактивные HTML-блоки, которые бот присылает
 прямо в сообщении.
@@ -129,6 +133,18 @@ Issues и pull requests приветствуются. Особенно поле�
 адаптеры для других языков и исправления, когда Telegram меняет лимиты или доступность. Сохраняйте скилл
 независимым от языка и объясняйте причину каждого правила.
 
+## Автор
+
+**Артём Исламов**, разработчик, преподаю программирование с 2016 года, 75 000+ учеников, основатель
+Glo Academy.
+
+- Сайт: [islamov-tema.ru](https://islamov-tema.ru?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill)
+- Курс по вайбкодингу: как делать настоящие продукты с ИИ-агентами:
+  [islamov-tema.ru/courses/vibecoding](https://islamov-tema.ru/courses/vibecoding?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill)
+- Telegram-канал «Лысый из браузера»: [@baldfrombrowser](https://t.me/baldfrombrowser)
+
+Если скилл сэкономил вам вечер отладки, поставьте звёздочку репозиторию: так его найдут другие.
+
 ## Лицензия
 
-[MIT](LICENSE)
+[MIT](LICENSE) © Артём Исламов

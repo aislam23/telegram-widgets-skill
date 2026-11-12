@@ -2,6 +2,10 @@
 
 **English** · [Русский](README.ru.md)
 
+Made by **[Artem Islamov](https://islamov-tema.ru?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill)**: developer and teacher since 2016, 75,000+
+students. Learn to build products like this with AI agents in my
+[vibe coding course](https://islamov-tema.ru/courses/vibecoding?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill) (in Russian).
+
 An agent skill that teaches AI coding agents (Claude Code, Claude apps, OpenAI Codex and others) to
 build **Telegram Bot API 10.4 widgets** correctly and securely: interactive HTML blocks that a bot sends
 inside a chat message.
@@ -126,6 +130,17 @@ Issues and pull requests are welcome, especially: new pitfalls with a reproducib
 more languages, and corrections when Telegram changes limits or availability. Please keep the skill
 language-neutral and explain the reason behind every rule.
 
+## Author
+
+**Artem Islamov**, developer and programming teacher since 2016, 75,000+ students, founder of Glo Academy.
+
+- Website: [islamov-tema.ru](https://islamov-tema.ru?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill)
+- Vibe coding course, building real products with AI agents (in Russian):
+  [islamov-tema.ru/courses/vibecoding](https://islamov-tema.ru/courses/vibecoding?utm_source=github&utm_medium=readme&utm_campaign=telegram-widgets-skill)
+- Telegram channel: [@baldfrombrowser](https://t.me/baldfrombrowser)
+
+If this skill saved you a debugging session, a star on the repository helps others find it.
+
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © Artem Islamov

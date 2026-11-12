@@ -1,6 +1,11 @@
 ---
 name: telegram-widgets
 description: Build, ship and secure Telegram Bot API 10.4+ HTML widgets, the interactive mini-UIs a bot sends inside a chat message (sendWidget, sendSharedWidget, answerWidgetQuery, editMessageWidgetData, editSharedWidgetData, widget_query and shared_widget_query updates, the TelegramWidget JavaScript object). Language- and framework-agnostic; works for bots in Python, Node.js, Go, PHP or anything that speaks HTTP. Use this skill whenever a user wants to add an interactive message, live progress bar, poll, picker, editor, mini-game, ticker, counter or quiz to a Telegram bot, migrate callback-button flows to widgets, debug a widget that looks different in Telegram than in a browser, or hits INPUT_MEDIA_WIDGET_TOO_LARGE, BUSY, NOT_ALLOWED or TIMEOUT, even if they only say "make the bot message interactive" and never say "widget".
+license: MIT
+metadata:
+  author: Artem Islamov
+  website: https://islamov-tema.ru
+  repository: https://github.com/aislam23/telegram-widgets-skill
 ---
 
 # Telegram widgets
