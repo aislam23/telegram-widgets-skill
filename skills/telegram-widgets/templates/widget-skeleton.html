@@ -1,0 +1,53 @@
+<!--
+  Safe starting point for a Telegram widget (Bot API 10.4, profile 1).
+  Protocol (adapt): chat_data = {"m": mode, ...}; public_data = JSON array of UI strings (T[n]).
+  Requests: "go:<option>" (primary action), "h" (background bookkeeping, optional).
+  Strip this comment and minify before sending; check with scripts/check_widget.py.
+-->
+<style>
+body{margin:0;padding:10px 12px 12px}
+b,p{display:block;margin:0 0 6px}
+.h{color:var(--tg-theme-hint-color);font-size:.87em}
+.r{display:flex;gap:6px;margin:0 0 8px}
+button{width:100%}
+.r button{background:var(--tg-theme-secondary-bg-color);color:var(--tg-theme-text-color)}
+.r .o{background:var(--tg-theme-button-color);color:var(--tg-theme-button-text-color)}
+.g{display:flex;gap:12px;align-items:center}
+svg{width:48px;height:48px;flex:none}
+.sp{animation:s 1.2s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+circle{fill:none;stroke-width:6}
+.u{stroke:var(--tg-theme-secondary-bg-color)}
+.v{stroke:var(--tg-theme-button-color)}
+</style>
+<div id=a></div>
+<script>
+var W=window.TelegramWidget,A=document.getElementById('a'),T=[],S={},B=0,P=0,C='',M='',sel=0;
+function $(i){return document.getElementById(i)}
+function st(){try{S=JSON.parse(W.chatData)||{}}catch(e){S={}}try{T=JSON.parse(W.publicData)||[]}catch(e){}}
+// One request in flight. A primary action pressed while a background request is pending is queued,
+// not lost; a second tap on the same primary action is ignored.
+function q(d,ok,no){
+if(!W)return;if(B){if(d.slice(0,3)=='go:'&&C.slice(0,3)!='go:')P=[d,ok];return}B=1;C=d;
+function f(e){B=0;no?no(e):(M=T[2]||'Not sent, tap again',draw());nx()}
+try{W.request(d).then(function(a){B=0;ok&&ok(a.result);nx()},f)}catch(e){f(e)}
+}
+function nx(){if(P){var p=P;P=0;q(p[0],p[1])}}
+function say(id,t){var n=$(id);if(n)n.textContent=t||''}  // never innerHTML for non-constant text
+function pick(){
+A.innerHTML='<b id=t></b><div class=r id=o><button>A</button><button>B</button><button>C</button></div><button id=g></button><p class=h id=n></p>';
+say('t',T[0]||'Choose');say('g',T[1]||'Confirm');say('n',M);
+var o=$('o').children;
+for(var i=0;i<o.length;i++)(function(i){o[i].className=i==sel?'o':'';o[i].onclick=function(){sel=i;pick()}})(i);
+$('g').onclick=function(){M='…';say('n',M);q('go:'+sel,function(r){if(r=='ok'){S.m='p';M=''}else M=r||'';draw()})};
+}
+function prog(){
+var p=S.p==null?25:S.p;
+A.innerHTML='<div class=g><svg viewBox="0 0 64 64"'+(S.p==null?' class=sp':'')+'><circle class=u cx=32 cy=32 r=27 /><circle class=v cx=32 cy=32 r=27 stroke-linecap=round stroke-dasharray=169.6 stroke-dashoffset='+169.6*(1-p/100)+' transform="rotate(-90 32 32)"/></svg><div><b id=t></b><p class=h id=n></p></div></div>';
+say('t',T[3]||'Working');say('n',S.p==null?'':Math.round(S.p)+'%');
+}
+function fin(){A.innerHTML='<b id=t></b><p class=h id=n></p>';say('t',S.t||T[4]||'Done');say('n',S.e||'')}
+function draw(){S.m=='e'||!S.m?pick():S.m=='p'?prog():fin()}
+if(W){st();W.onEvent('chatDataChanged',function(){st();M='';draw()});W.onEvent('themeChanged',draw)}
+draw();W&&W.ready();
+</script>
